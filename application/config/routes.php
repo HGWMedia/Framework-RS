@@ -38,7 +38,8 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+$route['default_controller'] = "rs";
+$route['rs/templates/(:any)'] = "template_used";
 $route['404_override'] = '';
 
 

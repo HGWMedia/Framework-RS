@@ -1,0 +1,3 @@
+RewriteEngine on
+RewriteCond $1 !^(elements\.php|favicon\.ico|index\.php|images|templates|graphics|robots\.txt)
+RewriteRule ^(.*)$ /projects/rollingstone.com/index.php/$1 [L]

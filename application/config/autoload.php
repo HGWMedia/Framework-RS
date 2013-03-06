@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('OAuth2');
+$autoload['libraries'] = array('OAuth2', 'User', 'Template');
 
 
 /*
@@ -64,7 +64,7 @@ $autoload['libraries'] = array('OAuth2');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array();
+$autoload['helper'] = array('url','file');
 
 
 /*
@@ -96,7 +96,7 @@ $autoload['config'] = array();
 |
 */
 
-$autoload['language'] = array();
+$autoload['language'] = array('en');
 
 
 /*

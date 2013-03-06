@@ -91,7 +91,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = FALSE;
+$config['enable_hooks'] = true;
 
 
 /*
@@ -106,7 +106,7 @@ $config['enable_hooks'] = FALSE;
 | http://codeigniter.com/user_guide/general/creating_libraries.html
 |
 */
-$config['subclass_prefix'] = 'MY_';
+$config['subclass_prefix'] = 'HGW_';
 
 
 /*
@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'adones.fuentes.hgwmedia.2013';
 
 /*
 |--------------------------------------------------------------------------
@@ -324,7 +324,7 @@ $config['compress_output'] = FALSE;
 |
 | Options are 'local' or 'gmt'.  This pref tells the system whether to use
 | your server's local time as the master 'now' reference, or convert it to
-| GMT.  See the 'date helper' page of the user guide for information
+| GMT.  See the 'date helper' page of the user guide for inf ormation
 | regarding date handling.
 |
 */

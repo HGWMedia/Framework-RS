@@ -1,6 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+define('DS','/');
+
+class Rs extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -17,9 +19,34 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	
+	//var $template;
+	
+	public function __construct()
 	{
-		$this->load->view('welcome_message');
+		parent::__construct();
+		define('Template','rsticket');
+		//define('TEMPLATEPATH','/templates');
+		//define('viewpath','./templates'.DS.Template.DS);
+	}
+	
+	public function index(){
+		
+		$this->load->model(Template.DS.'events');
+		$data['events'] = $this->events->getlist();
+		$this->load->view(Template.DS.'index', $data);		
+	}
+	
+	public function register(){
+		$this->load->view(Template.DS.'register');
+	}
+	
+	public function ticket(){
+	
+	}
+	
+	public function template_used(){
+		
 	}
 }
 

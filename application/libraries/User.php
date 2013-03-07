@@ -10,8 +10,8 @@ class User {
     {
 		$this->hgwmedia =& get_instance();
 		$this->hgwmedia->load->database();
-		//$this->hgwmedia->load->library('session');
-		//$this->hgwmedia->load->library('encrypt');
+		$this->hgwmedia->load->library('session');
+		$this->hgwmedia->load->library('encrypt');
     }
 
     public function get()

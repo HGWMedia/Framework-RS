@@ -1,7 +1,4 @@
 <div id="regfrm" class="reveal-modal medium">
-	<div class="row">
-    	<h1>Registration Form</h1>
-    </div>
 <form id="regformval">
 	<div class="row">
         <div class="small-3 columns">

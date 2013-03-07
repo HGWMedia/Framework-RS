@@ -3,4 +3,4 @@
 
 body { font-family:'Segoe UI', 'Lucida Grande', Arial; }
 
-.reveal-modal h1 { margin:0; padding:0;}
+.no-padding { margin:0 !important; padding:0 !important;}

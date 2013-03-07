@@ -11,7 +11,6 @@
   
   <script src="templates/<?php echo Template ?>/js/foundation.min.js"></script>
   <script src="templates/<?php echo Template ?>/js/foundation/foundation.reveal.js"></script>
-  <script src="templates/<?php echo Template ?>/js/foundation.section.js"></script>
   <script>
 	  $(document).foundation();
   </script>

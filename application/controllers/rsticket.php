@@ -2,7 +2,7 @@
 
 define('DS','/');
 
-class Rs extends CI_Controller {
+class Rsticket extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -25,7 +25,7 @@ class Rs extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		define('Template','rs');
+		define('Template','rsticket');
 		//define('TEMPLATEPATH','/templates');
 		//define('viewpath','./templates'.DS.Template.DS);
 	}

@@ -5,6 +5,24 @@
     	left column here
     </div>
     <div class="small-7 column">
+    	
+
+    <div class="section-container" data-section>
+      <section class="section">
+        <p class="title"><a href="#panel1">Section 1</a></p>
+        <div class="content">
+          <p>Content of section 1.</p>
+        </div>
+      </section>
+      <section class="section">
+        <p class="title"><a href="#panel2">Section 2</a></p>
+        <div class="content">
+          <p>Content of section 2.</p>
+        </div>
+      </section>
+    </div>
+
+
     <?php //print_r($events) 
         foreach($events as $eitem){
             echo $eitem."<br>"	;

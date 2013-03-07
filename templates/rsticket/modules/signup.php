@@ -1,4 +1,8 @@
 <div id="signupfrm" class="reveal-modal medium">
+	<div class="row">
+    	<h1>Sign up</h1>
+    </div>
+
 <form id="signupfrmval">
 	<div class="row">
         <div class="small-3 columns">

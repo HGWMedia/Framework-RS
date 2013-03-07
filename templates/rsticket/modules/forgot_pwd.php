@@ -1,4 +1,8 @@
 <div id="forgotfrm" class="reveal-modal medium">
+	<div class="row">
+    	<h1>Forgot your password?</h1>
+    </div>
+
 <form id="forgotfrmval">
 	<div class="row">
         <div class="small-3 columns">

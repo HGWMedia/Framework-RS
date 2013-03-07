@@ -1,5 +1,10 @@
 <div id="regfrm" class="reveal-modal medium">
-<form id="regformval">
+	<div class="row">
+    	<h1>Registration Form</h1>
+    </div>
+<form id="regformval" action="rs/register" method="post">
+
+	<input type="hidden" name="type" value="rs" />
 	<div class="row">
         <div class="small-3 columns">
           <label for="right-label" class="right inline">Email</label>
@@ -68,13 +73,14 @@
 </div>
 
 <script>
+		  
 var v = jQuery("#regformval").validate({
 		rules :{
-			fname:{required:true},
-			lname:{required:true},
+			//fname:{required:true},
+			//lname:{required:true},
 			//phone:{required:true},
-			email:{required:true,email:true},
-			pwd:{required:true},
+			//email:{required:true,email:true},
+			//pwd:{required:true},
 		},
 		onfocusout: false,
 		onkeyup: false,
@@ -86,30 +92,31 @@ var v = jQuery("#regformval").validate({
 	   }
 	   ,submitHandler :function()
 	   {
-		   /*
-		   $("#regOpenFrmSub").hide();
-		   $(".loading_img").show();
-		   $.ajax({url:"http://rollingstoneme.com/intern/2013/common_fn.php",type:"POST",data:$("#regOpenFrm").serialize(),
+		   el = "#regformval";
+		   console.log($(el).attr('action'));
+		   //$("#regOpenFrmSub").hide();
+		   //$(".loading_img").show();
+		   $.ajax({url:$(el).attr('action'),type:"POST",data:$(el).serialize(),
 					success:function(responce){
-							responce=jQuery.parseJSON(responce);
-							if(responce.error)
-							   {
-									$.each(responce.error,function(index,val){	
+							//responce=jQuery.parseJSON(responce);
+							//if(responce.error)
+							 //  {
+							//		$.each(responce.error,function(index,val){	
 										//alert(index);
-										$("#"+index).parent().append("<p class='error'>"+val+"</p>");											
-									})
-							   }
-							   if(responce.success)
-							   {
-								   $("#regOpenFrm").find('input:text, input:password, input:file, select, textarea').val('');
-								   reloadCaptcha();
-								   close_zoom_box();
-							   }
-							$("#regOpenFrmSub").show();
-							$(".loading_img").hide();
+										//$("#"+index).parent().append("<p class='error'>"+val+"</p>");											
+							//		})
+							//   }
+							//   if(responce.success)
+							//   {
+								  // $("#regOpenFrm").find('input:text, input:password, input:file, select, textarea').val('');
+								  // reloadCaptcha();
+								  // close_zoom_box();
+							//   }
+							//$("#regOpenFrmSub").show();
+							//$(".loading_img").hide();
 						}
 		   });
-		   */
+		   
 	   }
 									   })
 </script>

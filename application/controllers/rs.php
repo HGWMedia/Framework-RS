@@ -37,11 +37,67 @@ class Rs extends CI_Controller {
 		
 		$this->load->view(Template.DS.'index', $data);		
 	}
+	public function jason()
+	{
+		$this->output->set_content_type('application/json')->set_output(json_encode(array('status' => 'test')));
+		//$this->load->view('welcome_message');
+	}
+	public function signup(){
+		
+		$this->load->helper(array('form', 'url'));
+		$this->load->library('form_validation');
+		
+		
+		$email = $this->input->post('email');
+		$pwd = $this->input->post('pwd');
+		
+		$this->form_validation->set_rules('email', 'Eamil', 'required');
+		$this->form_validation->set_rules('pwd', 'Password', 'required');
+		if ($this->form_validation->run() == FALSE)
+		{
+			echo 'Status: Error found';
+		}else{
+			
+			if($this->users->login($email, $pwd)){
+
+				$this->output->set_content_type('application/json')->set_output(json_encode(array('status' => $this->users->status)));
+				
+				//echo "Status: ".$this->users->status;
+			}else{
+				
+				echo "Status: ".$this->users->status;
+			}
+		}
+	}
+
+	public function forgot(){
+		$this->load->helper(array('form', 'url'));
+		$this->load->library('form_validation');
+		
+		$email = $this->input->post('email');
+		
+		$this->form_validation->set_rules('email', 'Eamil', 'required');
+		if ($this->form_validation->run() == FALSE)
+		{
+			echo 'Status: Error found';
+		}else{
+			
+			if($this->users->emailcheck($email)){
+				echo "Status: Email sent to ".$email;
+			}else{
+				echo "Status: Email (".$email.") not Found in database!";
+			}
+		}
+	}
+	
+	public function logout(){
+		$this->session->sess_destroy();
+		redirect();
+	}
 	
 	public function register(){
 		
 		$this->load->helper(array('form', 'url'));
-		//$this->load->library('user');
 		$this->load->library('form_validation');
 		
 		$email = $this->input->post('email');
@@ -65,25 +121,14 @@ class Rs extends CI_Controller {
 		
 		if ($this->form_validation->run() == FALSE)
 		{
-			echo "Error Found";
-			//echo validation_errors();
-			//echo $this->load->view('myform');
+			echo "Status: Error Found";
 		}
 		else
 		{
-			//Send Email
-			
-			//Saving to database
-			
 			$this->users->registration($type, $email, $lname, $fname, $pwd);
-			//$this->load->user->register($type, $email, $lname, $fname, $pwd);
-			//echo "successful redirect";
-			//$this->load->view('formsuccess');
+			echo "Status: ".$this->users->status;
 		}
 		
-		//$this->output->set_content_type('application/json')->set_output(json_encode(array('foo' => 'bar')));
-		//print_r($_POST);
-		//$this->load->view(Template.DS.'register');
 	}
 	
 	public function ticket(){

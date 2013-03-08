@@ -6,11 +6,10 @@ class Users {
 	var $table;
 	var $error;
 	var $status;
+	var $userdata;
 	
 	function __construct()
     {
-		//echo "test";
-		//parent::__construct();
 		$this->hgwmedia =& get_instance();
 		$this->hgwmedia->load->database();
 		$this->hgwmedia->load->library('session');
@@ -27,6 +26,15 @@ class Users {
 		
     }
 	
+	public function login($email, $pwd){
+		$ischeck = $this->emailcheck($email);	
+		if($ischeck){
+			return ($this->validate($email, $pwd) == 1 ? true : false);			 
+		}else{
+			$this->status= 'Not yet registered';
+		}
+	}
+	
 	public function registration($type, $email, $lname, $fname, $pwd)
 	{
 		
@@ -34,71 +42,58 @@ class Users {
 		
 		if(!$ischeck){
 			$encoded_password = $this->hgwmedia->encrypt->encode($pwd);
-			switch($type){
-				case '':
-				
-				break;
-				case '':
-				
-				break;
-			}
 			$data = array(
-						  $type  	=> $type, 
-						  'title'  	=> $email, 
-						  'title'  	=> $lname, 
-						  'title'  	=> $fname, 
-						  'title'  	=> $pwd
+						  'type'  	=> $type, 
+						  'email'  	=> $email, 
+						  'lname'  	=> $lname, 
+						  'fname'  	=> $fname, 
+						  'pwd'  	=> $encoded_password
 					);
+			//saving to database
+			$this->hgwmedia->db->insert('users',$data);
+			$this->status='Registration Successfully. Please check your email for activation.';
 			
-			$this->don->db->insert('users',$data);
-			//echo "goes here";
+			//send to email here
+			
+		}else{
+			$this->status='Email is already registered!';
+				
 		}
-		
-		
-		/*
-		$query = $this->don->db->get_where('users', array('email' => $email));
-		
-		if( $query->num_rows() > 0 )
-		{
-			$this->last_error = "Email is already in use.";
-			return false;
-		}
-		else
-		{	
-		
-			if( $emailcheck )
-			{
-				$query = $this->don->db->get_where('users', array('email' => $email));
-				if( $query->num_rows() == 1 )
-				{
-					$this->last_error = "Email already in use.";
-					return false;
-				}
-			}
-			
-			$encoded_password = $this->don->encrypt->encode($password);
-			
-			$data = array(
-					'title'  	=> $title,
-					'company'   => $company,
-					'username'  => $email,
-					'password'  => $encoded_password,
-					'email'		=> $email,
-					'fname'		=> $fname,
-					'lname'		=> $lname
-					);
-			
-			$this->don->db->insert('users',$data);
-			
-			return true;
-		}
-		*/
 		
 	}
+
+	private function validate($email, $pwd){
+		$query = $this->hgwmedia->db->get_where('users', array('email' => $email));
+		$ret = $query->row();
+		$dpwd = $this->hgwmedia->encrypt->decode($ret->pwd);
+		
+		if($dpwd ==  $pwd){
+			$this->userdata = $ret;
+			$this->rsSession();
+			$this->status='URL redirection';
+			return true;
+		}else{
+			$this->status='Password not match in our database';
+				return false;
+		}
+
+	}
 	
-	private function emailcheck($email){
+	public function emailcheck($email){
 		$query = $this->hgwmedia->db->get_where('users', array('email' => $email));
 		return ($query->num_rows() == 1 ? true : false);
+	}
+	
+	private function rsSession(){
+		
+		$newdata = array(
+			   'email'     => $this->userdata->email,
+			   'fname'     => $this->userdata->fname,
+			   'lname'     => $this->userdata->lname,
+			   'logged_in' => TRUE
+        );
+
+		$this->hgwmedia->session->set_userdata($newdata);
 	}
 }
 

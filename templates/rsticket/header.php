@@ -31,7 +31,19 @@
             <div class="row">
             	<div class="small-12 columns">
                 	<div class="row right">
+                    
+                    	<?php
+                        //print_r($this->session->all_userdata());
+						if($this->session->userdata('logged_in')){
+						?>
+							<a href="rs/logout">Logout</a>
+						<?php
+                        }else{
+						?>
 		                <a href="#" data-reveal-id="signupfrm">Sign Up</a> | <a href="#" data-reveal-id="regfrm">Register</a>
+                        <?php
+						}
+						?>
                 	</div>
                 </div>
             </div>

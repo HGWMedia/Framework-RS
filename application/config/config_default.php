@@ -26,7 +26,7 @@ $config['base_url']	= '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = 'index.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -91,7 +91,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = false;
+$config['enable_hooks'] = FALSE;
 
 
 /*
@@ -106,7 +106,7 @@ $config['enable_hooks'] = false;
 | http://codeigniter.com/user_guide/general/creating_libraries.html
 |
 */
-$config['subclass_prefix'] = 'HGW_';
+$config['subclass_prefix'] = 'MY_';
 
 
 /*
@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'adones.fuentes.hgwmedia.2013';
+$config['encryption_key'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -244,13 +244,13 @@ $config['encryption_key'] = 'adones.fuentes.hgwmedia.2013';
 | 'sess_time_to_update'		= how many seconds between CI refreshing Session Information
 |
 */
-$config['sess_cookie_name']		= 'rsme_session';
+$config['sess_cookie_name']		= 'ci_session';
 $config['sess_expiration']		= 7200;
 $config['sess_expire_on_close']	= FALSE;
-$config['sess_encrypt_cookie']	= TRUE;
-$config['sess_use_database']	= TRUE;
-$config['sess_table_name']		= 'rsme_sessions';
-$config['sess_match_ip']		= TRUE;
+$config['sess_encrypt_cookie']	= FALSE;
+$config['sess_use_database']	= FALSE;
+$config['sess_table_name']		= 'ci_sessions';
+$config['sess_match_ip']		= FALSE;
 $config['sess_match_useragent']	= TRUE;
 $config['sess_time_to_update']	= 300;
 
@@ -279,7 +279,7 @@ $config['cookie_secure']	= FALSE;
 | COOKIE data is encountered
 |
 */
-$config['global_xss_filtering'] = TRUE;
+$config['global_xss_filtering'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -315,7 +315,7 @@ $config['csrf_expire'] = 7200;
 | by the output class.  Do not 'echo' any values with compression enabled.
 |
 */
-$config['compress_output'] = TRUE;
+$config['compress_output'] = FALSE;
 
 /*
 |--------------------------------------------------------------------------
@@ -324,7 +324,7 @@ $config['compress_output'] = TRUE;
 |
 | Options are 'local' or 'gmt'.  This pref tells the system whether to use
 | your server's local time as the master 'now' reference, or convert it to
-| GMT.  See the 'date helper' page of the user guide for inf ormation
+| GMT.  See the 'date helper' page of the user guide for information
 | regarding date handling.
 |
 */

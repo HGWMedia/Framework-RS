@@ -1,0 +1,590 @@
+@charset "utf-8";
+/* COMMON CSS */
+@font-face {
+	font-family: 'Rockwell';
+	src: url('font/rockwell.eot');
+	src: url('font/rockwell.eot?#iefix') format('embedded-opentype'),
+			 url('font/rockwell.woff') format('woff'),
+			 url('font/rockwell.ttf') format('truetype'),
+			 url('font/rockwell.svg#rockwell') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+body
+{
+	padding: 0;
+	text-align: center;
+	background:#f1efe8;
+	font-size: 12px;
+	font-family:Arial;
+	position:relative;
+	background:url(images/bg.jpg) no-repeat #000000 top center;
+}
+html > body
+{
+	font-size: 12px;
+}
+html
+{
+	min-height: 100%;
+	height: auto;
+}
+form, table, p, h1, h2, h3, h4, h5, h6, ul, li, div, dl
+{
+	margin: 0;
+	padding: 0;
+}
+li
+{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+a
+{
+	text-decoration: none;
+	outline: none;
+	color: #000;
+}
+a:hover
+{
+	text-decoration: underline;
+}
+img
+{
+	border: 0;
+	vertical-align: middle;
+}
+/* CSS Clearfix */
+.clearfix:after
+{
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix
+{
+	display: inline-table;
+}
+/* Hides from IE-mac \*/
+* html .clearfix
+{
+	height: 1%;
+}
+.clearfix
+{
+	display: block;
+}
+input, select, textarea, button {
+	outline:none;
+}
+/* End hide from IE-mac */
+.clsFloatLeft
+{
+	float: left;
+}
+.clsFloatRight
+{
+	float: right;
+}
+.clear
+{
+	clear: both;
+}
+.clsBg_None
+{
+	background: none !important;
+}
+.clsBorder_No
+{
+	border: none !important;
+}
+.clsBold
+{
+	font-weight: bold;
+}
+.txt_right_align
+{
+	text-align: right;
+}
+.txt_center_align
+{
+	text-align: center;
+}
+.txt_left_align
+{
+	text-align: left;
+}
+.clsDisplayBlock
+{
+	display:block;
+}
+/* EOF Common CSS */
+.row
+{
+	padding:0px 18px;
+	background-color:#FFFFFF;
+}
+.wrapper
+{
+	/*background:url(images/wrapper_bg.png) no-repeat  top center #FFFFFF;*/
+	background:url(images/IWWRS13_NotebookBack.png) top center repeat-y #FFFFFF;
+} 
+.removerowpadding
+{
+	padding:0px 0px;
+}
+.backToRs
+{
+
+	background:url(images/topNavBg.png) no-repeat top center #FFFFFF;
+	height:46px;
+	/*margin-top:18px;
+	box-shadow: -1px -15px 32px -24px #6B6B6B;
+	-webkit-box-shadow: -1px -15px 32px -24px #6B6B6B;
+	-moz-box-shadow: -1px -15px 32px -24px #6B6B6B;
+	-o-box-shadow: -1px -15px 32px -24px #6B6B6B;*/
+	
+}
+.headerBg
+{
+	text-align:center;
+	padding:0px;
+	background:url(images/IWWRS13_NotebookBack.png) top center repeat-y #FFFFFF;			
+}
+.backToRs a
+{
+	display:block;
+	text-align:left;
+	color:#FFFFFF;
+	display:block;
+	margin:14px 0px 0px 0px;
+	font-weight:bold;
+	text-transform:uppercase;
+	font-family: 'Rockwell';
+}
+.clsTitle
+{
+	font-family: 'Rockwell';
+	text-transform:uppercase;
+}
+.inner .header
+{
+	height: 200px !important;
+    overflow: hidden !important;
+	margin-top:-27px;
+}
+.inner .headerFull
+{
+	height:auto !important;
+	overflow:visible !important;
+	margin-top:0px;
+}
+.header
+{
+	/*background:url(images/IWWRS13_topNotebook.png) no-repeat top left;	*/
+}
+.headerStripAddPadding img
+{
+	padding:46px 0 0 0px;
+}
+.headerSmall
+{
+	/*padding:31px 0px 0px 0px;*/
+}
+.intenShipText a
+{
+	display:block;
+	margin:0px 0px 0px 0px;
+}
+.iwwrsLogo
+{
+	/*text-align:left;*/
+}
+.iwwrsLogo a
+{
+	display:block;	
+}
+.iwwrsLogo .marginMinus
+{
+	margin:-35px 0px 10px 0px;
+}
+.menuCon #menu
+{
+	display:inline-block;
+}
+
+#menu .nav-bar
+{
+	background:none;
+	margin-top:0px;
+}
+#menu  .nav-bar > li
+{
+	border:0px none;	
+}
+#menu .nav-bar > li > a
+{
+	font-weight: bold;
+    text-transform: uppercase;
+	font-family: 'Rockwell';
+}
+#menu .nav-bar > li > a:hover
+{
+	color:#e7281e;
+}
+.blackBg .nav-bar > li > a:hover
+{
+	color:#FFFFFF !important;	
+}
+#menu .nav-bar > li > a:first-child
+{
+	padding:0px 25px;
+}
+.menuCon
+{
+	background:url(images/navBg.jpg);
+}
+.backToRsFixed
+{
+	z-index:1;
+	position:fixed;
+	width:100%;
+	top:0;
+}
+.blackBg
+{
+	background-color: #000000;
+    background-image: none !important;
+    position: fixed;
+    top: 46px;
+    width: 100%;
+    z-index: 1;
+}
+.blackBg  #menu
+{
+	display:block !important
+}
+.blackBg  #menuDiv
+{
+	padding:0px;
+}
+.blackBg li
+{
+	border-bottom:1px solid #666666 !important;
+}
+.blackBg li:hover
+{
+	background:#cc3333;	
+}
+#content
+{
+	padding:0px 10px;
+}
+#content .description
+{
+	background:#d41115;
+	border-radius: 10px 10px 10px 10px;
+	margin:10px 0px;
+	padding:10px;
+	color:#ffffff;	
+	opacity: 0.88;
+}
+#content .description .desc
+{
+	font-size: 12px;
+    line-height: 23px;
+    margin-top: 5px;
+    text-align: left;
+}
+#content .description .title {
+    color: #ffffff;
+    font-family: Rockwell;
+    font-size: 28px;
+    font-weight: normal;
+    text-transform: uppercase;
+	text-align:left;
+}
+#columnThree
+{
+	padding:0px;	
+}
+#columnThree .four
+{
+    padding: 0 5px;
+	margin:10px 0px 0px 0px;  
+}
+#columnThree .four .colContent
+{
+	background: none repeat scroll 0 0 #ffffff;
+    border-radius: 10px 10px 10px 10px;
+	padding:5px 10px;
+}
+#columnThree .four .colContent h2,.joinComDesc .colContent h2
+{
+	background: url("images/boxTitle.jpg") repeat-x scroll 0 0 transparent;
+    color: #FFFFFF;
+    font-family: Rockwell;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 31px;
+    margin: 10px 0 8px;
+    padding: 0 5px;
+    text-align: left;
+    text-transform: uppercase;
+}
+#columnThree .four .colDesc
+{
+	text-align:left;
+	margin: 0 0 5px;
+	padding: 0 5px;
+}
+#columnThree #whyWorkingUs
+{
+		
+}
+#whatsChallange .colDesc
+{
+	/*background:url(images/whatsChallenge.jpg) no-repeat #fff !important;
+	width:303px;
+	height:204px;*/
+	margin:0px !important;
+}
+.moreArrow
+{
+	text-align:right;
+}
+.moreArrow a
+{
+	display:block;
+	background:url(images/Arrow-more.png) no-repeat;
+	width:40px;
+	height:24px;		
+}
+.moreArrow a:hover
+{
+	background-position:0px -24px;
+}
+.social_link a
+{
+	display:block;
+	background:url(images/SM_buttons.png) no-repeat;
+	height:70px;
+	float:left;
+	margin:0px 5px;	
+}
+.social_link a.facebook
+{
+	background-position: 0 0;
+    width: 38px;	
+}
+.social_link a.facebook:hover
+{
+	background-position: 0 -70px;
+}
+.social_link a.twitter
+{
+	background-position: -41px 0;
+    width: 38px;
+}
+.social_link a.twitter:hover
+{
+	background-position: -41px -70px;
+}
+.social_link a.youTube
+{
+	background-position: -89px 0;
+    width: 75px;
+}
+.social_link a.youTube:hover
+{
+	background-position: -89px -70px;
+}
+#socialLinks
+{
+	float:none;
+	display:table;
+	margin:0px auto;
+}
+#footer
+{
+	font-family:Arial, Helvetica, sans-serif !important;
+	color:#999999;
+}
+#footer a
+{
+	color:#999999;
+}
+#footer .copyText
+{
+	padding:8px 0px 0px 0px;
+}
+#footer .rsLogo
+{
+	padding:0px;	
+}
+.Icon
+{
+	margin:7px 0 0 !important;
+	width:30px;
+	height:50px;
+	display:block;	
+	background:url(images/Nav-openclose.png) no-repeat;
+}
+.menuPlus
+{
+	background-position:0 0;	
+}
+.menuMinus 
+{
+	background-position:-30px 0;
+}
+#sponcers
+{
+	background:url(images/IWWRS13-BottomBackground.png) no-repeat top center #FFFFFF;
+}
+#sponcers.clsSeamBg
+{
+	background:url(images/IWWRS13_NotebookBack.png) top center repeat-y #FFFFFF;
+}
+#sponcers .sponcersAd
+{
+	height: 91px;
+    margin-top: 206px;
+}
+.contentDesc
+{
+	 border-radius: 10px 10px 10px 10px;
+	 background:#FFFFFF;
+	 margin: 10px 0;
+	 padding:10px;
+	 text-align:left;
+}
+.whatWinDesc
+{
+	text-align:left;
+}
+.whatWinDesc .clsTitle,.SponcersDesc .clsTitle
+{
+	margin:0px 0px 20px 0px;
+	text-transform:uppercase;
+}
+.whatWinDesc p
+{
+	line-height:20px;
+}
+.whatWinSmallDesc
+{
+	font-family: 'Rockwell';
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px auto 10px;
+	line-height:25px;
+	text-align:center;
+}
+#columnThree .testimonials .colContent,#columnThree .sponcers .colContent
+{
+	height:240px;	
+}
+#columnThree .testimonials,#columnThree .sponcers
+{
+	margin:0 0 10px 0 !important;
+}
+.testimonials .colContent p,.sponcers .colContent p
+{
+	margin:0px 0px 10px 0px;		
+}
+.testimonials .colContent p.clsItalic
+{
+	font-style:italic;
+}
+#tab1.sponcers .colContent
+{
+	background:#D41115;
+}
+#tab1.sponcers .colContent .colDesc
+{
+	text-align:center;
+}
+.clsPencil
+{
+	background:url(images/pencil-header.png) no-repeat;
+	width:400px;
+	height:35px;
+	margin:15px 0 0 15px !important;
+	display:block;
+}
+.clsPencil:hover
+{
+	background-position:0 -35px;
+}
+.join_the_competition .joinComFrm
+{
+	text-align:left;
+	background: none repeat scroll 0 0 #D41115;
+    border-radius: 10px 10px 10px 10px;
+    color: #FFFFFF;
+    margin: 10px 0;
+    opacity: 0.88;
+    padding: 20px;
+}
+.join_the_competition .joinComFrm .clsTitle
+{
+	color:#FFFFFF;
+}
+.join_the_competition .joinComFrm .frmContainer
+{
+	
+}
+.join_the_competition .frmContainer .clsFormField
+{
+	margin:5px 0px;
+}
+.join_the_competition .frmContainer select
+{
+	width:80%;
+	padding:5px;	
+}
+.join_the_competition .frmContainer .clsFormField .clsLabel
+{
+	color:#FFFFFF;
+	text-align:right;
+	line-height: 30px;		
+	font-family: 'Rockwell';
+	text-transform:uppercase;
+}
+.genderFrmOpt
+{
+	font-family: 'Rockwell';
+	margin:5px 0px 10px 0px !important;
+	line-height: 30px;
+}
+.clSubmit
+{
+	
+}
+.clSubmit input[type="submit"]
+{
+	text-align:center;
+	text-transform:uppercase;
+	color:#000000;
+	background:url(images/submitBtn.png) no-repeat;
+	font-family: 'Rockwell';
+	border:none;
+	width:137px;
+	height:46px;
+}
+.joinComDesc
+{
+	margin: 10px 0;
+    padding: 0 0 0 10px;
+}
+.joinComDesc .desc
+{
+	background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 10px 10px 10px 10px;
+    padding: 5px 10px;
+	text-align:left;
+}

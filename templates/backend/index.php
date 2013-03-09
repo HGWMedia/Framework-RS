@@ -8,7 +8,7 @@
 
 		<?php
         //print_r($this->session->all_userdata());
-        if($this->session->userdata('logged_in')){
+        if($this->session->userdata('logged_in') && $this->session->userdata('isadmin')){
         ?>
             <a href="backend/logout">Logout</a>
         <?php

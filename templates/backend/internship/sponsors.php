@@ -9,6 +9,6 @@
 <?php echo $this->template->get_template_part('modules/menu/main') ?>
 </div>
 <div class="row">
-	Applicants content here.
+	Sponsors content here.
 </div>
 <?php echo $this->template->get_footer() ?>

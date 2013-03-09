@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Set the viewport width to device width for mobile -->
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="stylesheets/foundation.css">
+<link rel="stylesheet" href="stylesheets/app.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="javascripts/modernizr.foundation.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		hideItems();
+		$(".Icon").live("click",function(e){
+			e.preventDefault();
+			if($(this).hasClass('menuPlus'))
+			{
+				$(".backLink").removeClass("menuPlus");
+				$(".backLink").addClass("menuMinus");
+				$(".menuCon").show();
+			}
+			else
+			{
+				$(".backLink").addClass("menuPlus");
+				$(".backLink").removeClass("menuMinus");
+				$(".menuCon").hide();
+			}			
+		})
+		$(window).resize(function()
+		{
+			hideItems();
+		})
+	})
+	function hideItems()
+	{
+		var backText="Back to Rolling Stone";
+		
+		if($(this).width() < 767)
+		{
+			$(".intenShipText").hide();
+			$(".iwwrsLogo a").removeClass("marginMinus");	
+			$(".iwwrsLogo").removeClass("right");
+			$(".iwwrsLogo").removeClass("txt_left_align");			
+			$(".row").addClass("removerowpadding");	
+			$(".rsLogo").removeClass("txt_right_align");
+			$(".menuCon").hide();
+			$(".menuCon").addClass("blackBg");
+			$(".backLink").html('');
+			$(".backLink").addClass("Icon");
+			$(".backLink").addClass("menuPlus");
+			$(".backToRs").addClass("backToRsFixed");
+			$(".header").addClass("headerSmall");
+		} 
+		else
+		{
+			$(".intenShipText").show();
+			$(".iwwrsLogo a").addClass("marginMinus");	
+			$(".row").removeClass("removerowpadding");
+			$(".iwwrsLogo").addClass("right");
+			$(".iwwrsLogo").addClass("txt_left_align");
+			$(".rsLogo").addClass("txt_right_align");	
+			$(".menuCon").removeClass("blackBg");	
+			$(".backLink").removeClass("Icon");
+			$(".backLink").html(backText);
+			$(".backLink").removeClass("menuPlus")
+			$(".backLink").removeClass("menuMinus")
+			$(".backToRs").removeClass("backToRsFixed");
+			$(".header").removeClass("headerSmall");
+						
+		}
+	}
+</script>
+<link href="style.css" media="all" rel="stylesheet" />
+<title>RollingStone ME | The Internship</title>
+</head>
+<body>
+<div class="row backToRs">
+    <div class="six columns left"> <a href="#" class="backLink">Back to Rolling Stone</a> </div>
+    <div class="clear"></div>
+</div>
+<div class="row headerBg">
+	<img src="images/IWWRS13_topNotebook.png" />
+</div>
+<div class="row wrapper">  
+  <div class="header">
+    <div class="six columns left intenShipText"> <a href="#" class=""> <img src="images/intenshipText.png" /> </a> </div>
+    <div class="six columns right iwwrsLogo"> <a href="#" class="marginMinus"> <img src="images/bigLogo.png" /> </a> </div>
+    <div class="clear"></div>
+  </div>
+  <div class="menuCon">
+    <div class="eleven columns centered" id="menuDiv">
+      <nav id="menu">
+        <ul class="nav-bar">
+          <li><a class="selected" href="#">Home</a></li>
+          <li><a href="#">Join the Competition</a></li>
+          <li><a href="#">How it Works</a></li>
+          <li><a href="#">What You Could Win</a></li>
+          <li><a class="judges_link" href="#">Judges</a></li>
+          <li><a href="#">Sponsors</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="columns twelve" id="content">
+    <div class="description">
+      <div class="columns eight left">
+        <h1 class="title">I WANT TO WORK FOR ROLLING STONE</h1>
+        <div class="desc">
+          <p>Etiam egestas sapien et ante ultricies eu scelerisque sem egestas. Sed rutrum est nec metus tincidunt rutrum. Integer non nisl quis sem mattis porttitor ut in massa. Sed a leo mauris. In hac habitasse platea dictumst. Nulla lobortis pretium justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam elementum, nisi nec lobortis pulvinar, dolor ipsum bibendum erat, vitae sodales neque augue non lectus. Nullam ac mauris justo, a consectetur felis. Aliquam congue nunc magna. In lacinia mi et nisi bibendum hendrerit. Quisque iaculis nisi vitae nisi hendrerit auctor. Pellentesque euismod interdum nisl, ut volutpat augue gravida eu.</p>
+        </div>
+      </div>
+      <div class="columns four right">
+      	<img src="images/descImg.png" style=" opacity: 0.46;"/>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div id="columnThree">
+      <div class="four columns" id="whatsChallange">
+        <div class="colContent">
+          <h2>WHAT’S THE CHALLENGE?</h2>
+          <div class="colDesc">
+            <p><img src="images/whatsChallenge.jpg" /></p>
+          </div>
+        </div>
+      </div>
+      <div class="four columns" id="whyWorkingUs">
+        <div class="colContent">
+          <h2>WHY WORKING FOR US?</h2>
+          <div class="colDesc">
+            <p>Etiam egestas sapien et ante ultricies eu scelerisque sem egestas. Sed rutrum est nec metus tincidunt rutrum. Integer non nisl quis sem mattis porttitor ut in massa. Sed a leo mauris. In hac habitasse platea dictumst. Nulla lobortis pretium justo. Cum sociis natoque penatibus. </p>
+            <p class="moreArrow"><a href="#" class="right"></a></p>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+      <div class="four columns" id="whoCanApply">
+        <div class="colContent">
+          <h2>WHO CAN APPLY?</h2>
+          <div class="colDesc">
+            <p>The majority of the competition will take place online. "Street To Stage" will create a digital community who will support their favorite artists by voting and sharing among their social networks. The three finalists will compete on stage at Hard Rock Cafe Dubai in front .</p>
+             <p class="moreArrow"><a href="#" class="right"></a></p>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <div class="columns twelve" class="footerAd">
+    	<img src="images/footerAdBG.png" style="opacity: 0.52;" />
+    </div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <div class="columns three centered" id="socialLinks">
+        <div class="social_link">
+          <ul>
+            <li><a href="#" class="facebook"></a></li>
+            <li><a href="#" class="twitter"></a></li>
+            <li><a href="#" class="youTube"></a></li>
+            <li class="clear"></li>
+          </ul>
+          <div class="clear"></div>
+        </div>
+      </div>    
+    <div class="columns"> </div>
+  </div>
+</div>
+<div class="row" style="display:none">
+	<img src="images/footerBitImage.png" />
+</div>
+<div class="row" id="footer">
+	<p>&nbsp;</p>
+    <div class="column three left rsLogo txt_right_align">
+    	<a href="#"><img src="images/RSLogo.png" /></a>
+    </div>    
+    <div class="column left">
+    	<p class="copyText">Copyright © 2013 <a href="#">Rolling Stone</a>  |  All rights reserved  |  <a href="#">IWWRS@rollingstoneme.com</a>.</p>
+    </div>
+    <div class="clear"></div>
+    <p>&nbsp;</p>
+</div>
+<p>&nbsp;</p>
+</body>
+</html>

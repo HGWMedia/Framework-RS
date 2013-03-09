@@ -90,6 +90,7 @@ class Users {
 			   'email'     => $this->userdata->email,
 			   'fname'     => $this->userdata->fname,
 			   'lname'     => $this->userdata->lname,
+			   'isadmin'     => $this->userdata->isadmin,
 			   'logged_in' => TRUE
         );
 

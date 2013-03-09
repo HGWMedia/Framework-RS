@@ -1,25 +1,52 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+define('DS','/');
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
-	public function index()
+class Internship extends CI_Controller {
+
+	
+	public function __construct()
 	{
-		$this->load->view('welcome_message');
+		parent::__construct();
+		define('Template','internship');
+	}
+	
+	public function index(){	
+		$this->load->view(Template.DS.'index');		
+	}
+	
+	public function join_the_competetion(){
+		$this->load->view(Template.DS.$page = $this->uri->segment(2));	
+	}
+	public function how_it_works(){
+		$this->load->view(Template.DS.$page = $this->uri->segment(2));	
+	}
+	public function what_you_could_win(){
+		$this->load->view(Template.DS.$page = $this->uri->segment(2));	
+	}
+	public function sponsors(){
+		$this->load->view(Template.DS.$page = $this->uri->segment(2));	
+	}
+	
+	public function join(){
+		$this->load->library('Competition');
+		
+		$email = $this->input->post('email');
+		$fullname = $this->input->post('name');
+		$phone = $this->input->post('contact_no');
+		$address = $this->input->post('address');
+
+		
+		$data = array(
+			  'email'  	=> $email, 
+			  'fullname'  	=> $fullname, 
+			  'phone'  	=> $phone, 
+			  'address'  	=> $address
+		);
+
+		
+		$this->competition->savetodb($data);
+		
 	}
 }
 

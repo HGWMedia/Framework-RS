@@ -10,7 +10,11 @@ class Backend extends CI_Controller {
 	}
 	
 	public function index(){
-		$this->load->view(Template.DS.'index');		
+		if($this->session->userdata('logged_in') && $this->session->userdata('isadmin')){
+			$this->load->view(Template.DS.'dashboard');	
+		}else{
+			$this->load->view(Template.DS.'index');		
+		}
 	
 	}
 	
@@ -64,9 +68,9 @@ class Backend extends CI_Controller {
 			break;
 		}
 		
-		echo Template.DS.$folder.$view;
+		//echo Template.DS.$folder.$view;
 		
-		if($this->session->userdata('logged_in')){
+		if($this->session->userdata('logged_in') && $this->session->userdata('isadmin')){
 			$this->load->view(Template.DS.$folder.$view);	
 		}else{
 			redirect(base_url().'backend');	
@@ -75,9 +79,20 @@ class Backend extends CI_Controller {
 		
 	}
 	public function internship(){
-		if($this->session->userdata('logged_in')){
-			$this->load->view(Template.DS.'dashboard');	
+		$this->load->library('competition');
+		
+		if($this->session->userdata('logged_in') && $this->session->userdata('isadmin')){
+			//echo "goes here".$this->uri->segment(4);
+			$page = $this->uri->segment(3);
+			
+			//echo $page;
+			if($page != NULL){
+				$this->load->view(Template.DS.$this->uri->segment(2).DS.$this->uri->segment(3));	
+			}else{
+				$this->load->view(Template.DS.$this->uri->segment(2).DS.$this->uri->segment(2));	
+			}
 		}else{
+			
 			redirect(base_url().'backend');	
 		}
 		

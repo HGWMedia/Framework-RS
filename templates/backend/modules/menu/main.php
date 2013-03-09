@@ -13,6 +13,8 @@
   <section class="top-bar-section">
     <!-- Left Nav Section -->
     <ul class="left">
+      <li><a href="<?php echo base_url().Template.DS?>dashboard">Dashboard</a>
+      <li class="divider"></li>
       <li class="has-dropdown"><a href="#">AAX</a>
       </li>
       <li class="divider"></li>

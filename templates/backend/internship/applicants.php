@@ -10,6 +10,7 @@
 </div>
 <div class="row">
 	<h3>Internship Applicants</h3>
+    <?php echo $this->pagination->create_links(); ?>
 	<table width="100%">
     	<thead>
             <tr><td>Name</td><td>Email</td><td colspan="2">Phone</td></tr>
@@ -22,5 +23,7 @@
             <?php endforeach ?>
     	</tbody>
     </table>
+    <?php echo $this->pagination->create_links(); ?>
+
 </div>
 <?php echo $this->template->get_footer() ?>

@@ -24,7 +24,7 @@
     	<div class="small-3 columns">
         </div>
         <div class="small-9 columns"> 
-	    	<a href="#" data-reveal-id="forgotfrm" >Forgot password?</a> <input type="submit" class="small button" value="Submit" />
+	    	<a href="#" data-reveal-id="forgotfrm" >Forgot password?</a> <input type="submit" class="small button" value="Submit" /> <a href="#" class="small button" data-reveal-id="regfrm" >Register</a>
         </div>
     </div>
     

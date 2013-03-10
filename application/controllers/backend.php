@@ -67,26 +67,31 @@ class Backend extends CI_Controller {
 				$view = 'dashboard';
 			break;
 		}
-		
-		//echo Template.DS.$folder.$view;
-		
 		if($this->session->userdata('logged_in') && $this->session->userdata('isadmin')){
 			$this->load->view(Template.DS.$folder.$view);	
 		}else{
 			redirect(base_url().'backend');	
 		}
-		
-		
 	}
+	public function register(){
+		$this->load->view(Template.DS.$folder.'register');	
+	}
+	
 	public function internship(){
 		$this->load->library('competition');
 		
 		if($this->session->userdata('logged_in') && $this->session->userdata('isadmin')){
-			//echo "goes here".$this->uri->segment(4);
 			$page = $this->uri->segment(3);
-			
-			//echo $page;
 			if($page != NULL){
+				$this->load->library('pagination');
+
+				$config['base_url'] = $this->uri->segment(3).'/page/';
+				$config['total_rows'] = $this->competition->getallrecords();
+				$config['per_page'] = 2; 
+				
+				$this->pagination->initialize($config); 
+				
+				
 				$this->load->view(Template.DS.$this->uri->segment(2).DS.$this->uri->segment(3));	
 			}else{
 				$this->load->view(Template.DS.$this->uri->segment(2).DS.$this->uri->segment(2));	

@@ -22,6 +22,11 @@ class Competition {
 	public function applicants(){
 		return $this->hgwmedia->db->get('internship');
 	}
+	
+	public function getallrecords(){
+		return $this->hgwmedia->db->count_all('internship');
+		//$query = $this->db->get_where('internship');
+	}
 }
 
 /* End of file Someclass.php */

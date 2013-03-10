@@ -13,7 +13,7 @@
           <label for="right-label" class="right inline">Email</label>
         </div>
         <div class="small-9 columns">
-          <input type="text" name="email" id="email" placeholder="Inline Text Input">
+          <input type="text" name="email" id="email" placeholder="Email">
         </div>
     </div>
 	<div class="row">
@@ -21,7 +21,7 @@
           <label for="right-label" class="right inline">First Name</label>
         </div>
         <div class="small-9 columns">
-          <input type="text" name="fname" id="fname" placeholder="Inline Text Input">
+          <input type="text" name="fname" id="fname" placeholder="Firstname">
         </div>
     </div>
 	<div class="row">
@@ -29,7 +29,7 @@
           <label for="right-label" class="right inline">Last Name</label>
         </div>
         <div class="small-9 columns">
-          <input type="text" name="lname" id="lname" placeholder="Inline Text Input">
+          <input type="text" name="lname" id="lname" placeholder="Lastname">
         </div>
     </div>
 	<div class="row">
@@ -37,7 +37,7 @@
           <label for="right-label" class="right inline">Password</label>
         </div>
         <div class="small-9 columns">
-          <input type="password" name="pwd" id="pwd" placeholder="Inline Text Input">
+          <input type="password" name="pwd" id="pwd" placeholder="Password">
         </div>
     </div>
 	<div class="row">
@@ -45,7 +45,7 @@
           <label for="right-label" class="right inline">Confirm Password</label>
         </div>
         <div class="small-9 columns">
-          <input type="password" name="cpwd" id="cpwd" placeholder="Inline Text Input">
+          <input type="password" name="cpwd" id="cpwd" placeholder="Confirm Passwrod">
         </div>
     </div>
 	<div class="row">
@@ -53,7 +53,7 @@
           <label for="right-label" class="right inline">Phone</label>
         </div>
         <div class="small-9 columns">
-          <input type="text" name="phone" id="phone" placeholder="Inline Text Input">
+          <input type="text" name="phone" id="phone" placeholder="Phone">
         </div>
     </div>
       

@@ -23,4 +23,6 @@
 </head>
 
 <body>
+	<?php echo $this->template->get_template_part('modules/form_register') ?>
+        <?php echo $this->template->get_template_part('modules/forgot_pwd') ?>    
 

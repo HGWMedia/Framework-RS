@@ -9,6 +9,6 @@
 <?php echo $this->template->get_template_part('modules/menu/main') ?>
 </div>
 <div class="row">
-	Sponsors content here.
+	<h3>Sponsors</h3>
 </div>
 <?php echo $this->template->get_footer() ?>

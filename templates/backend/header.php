@@ -24,5 +24,9 @@
 
 <body>
 	<?php echo $this->template->get_template_part('modules/form_register') ?>
-        <?php echo $this->template->get_template_part('modules/forgot_pwd') ?>    
+    <?php echo $this->template->get_template_part('modules/forgot_pwd') ?>    
+<?php if($this->session->userdata('logged_in')): ?>
 
+	<?php echo $this->template->get_template_part('modules/tickets/ticket_form_item') ?>
+    <?php echo $this->template->get_template_part('modules/tickets/ticket_form_category') ?>    
+<?php endif; ?>

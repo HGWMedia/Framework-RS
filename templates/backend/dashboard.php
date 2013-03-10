@@ -11,4 +11,6 @@
 <div class="row">
 	<h3>Latest updates</h3>
 </div>
+
+
 <?php echo $this->template->get_footer() ?>

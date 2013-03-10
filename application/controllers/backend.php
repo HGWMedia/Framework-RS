@@ -85,12 +85,14 @@ class Backend extends CI_Controller {
 			if($page != NULL){
 				$this->load->library('pagination');
 
-				$config['base_url'] = $this->uri->segment(3).'/page/';
+				$this->competition->limit = 2;
+				$config['base_url'] = base_url().DS.Template.DS.$this->uri->segment(2).DS.$this->uri->segment(3).'/';
 				$config['total_rows'] = $this->competition->getallrecords();
-				$config['per_page'] = 2; 
+				$config['per_page'] = $this->competition->limit; 
+				
+				$config['uri_segment'] = $this->uri->segment(4); 
 				
 				$this->pagination->initialize($config); 
-				
 				
 				$this->load->view(Template.DS.$this->uri->segment(2).DS.$this->uri->segment(3));	
 			}else{
@@ -101,6 +103,49 @@ class Backend extends CI_Controller {
 			redirect(base_url().'backend');	
 		}
 		
+	}
+	public function tickets(){
+		$this->load->library('tickets');
+		
+		if($this->session->userdata('logged_in') && $this->session->userdata('isadmin')){
+			$page = $this->uri->segment(3);
+			if($page != NULL){
+				$this->load->library('pagination');
+
+				$this->tickets->limit = 2;
+				$config['base_url'] = base_url().DS.Template.DS.$this->uri->segment(2).DS.$this->uri->segment(3).'/';
+				$config['total_rows'] = $this->tickets->getallrecords();
+				$config['per_page'] = $this->tickets->limit; 
+				
+				$config['uri_segment'] = $this->uri->segment(4); 
+				
+				$this->pagination->initialize($config); 
+				
+				//echo $this->uri->segment(3);
+				
+				$this->checkCategory($this->uri->segment(4));
+				
+			}else{
+				$this->load->view(Template.DS.$this->uri->segment(2).DS.$this->uri->segment(2));	
+			}
+		}else{
+			
+			redirect(base_url().'backend');	
+		}
+		
+	}
+	
+	private function checkCategory($cat){
+		//echo "cate her".Template.DS.$this->uri->segment(2).DS.$this->uri->segment(3);
+		
+		if(is_int($cat)){
+			$this->load->view(Template.DS.$this->uri->segment(2).DS.'add-new-item');	
+		}else if($cat == "additem"){
+			//$this->load->view(Template.DS.$this->uri->segment(2).DS.'add-new-item');
+		}else{
+			$this->load->view(Template.DS.$this->uri->segment(2).DS.$this->uri->segment(3));	
+		}
+		//exit;
 	}
 
 }

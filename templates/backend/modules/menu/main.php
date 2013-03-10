@@ -25,7 +25,6 @@
           <ul class="dropdown">
               <li><a href="#">Add New</a></li>
             </ul>
-
           </li>
         </ul>
     <!--
@@ -58,7 +57,12 @@
       <li class="divider"></li>
       <li class="has-dropdown"><a href="#">Tickets</a>
         <ul class="dropdown">
-          <li class="has-dropdown"><a href="#">Event</a>
+          <li class="has-dropdown"><a href="<?php echo base_url().Template.DS?>tickets/categories">Categories</a>
+            <ul class="dropdown">
+              <li><a href="<?php echo base_url().Template.DS?>tickets/category/additem"  data-reveal-id="cateitemfrm" >Add Category Item</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown"><a href="#">Events</a>
             <ul class="dropdown">
               <li><a href="#">Add New</a></li>
               <li><a href="#">View All</a></li>
@@ -80,9 +84,7 @@
     <!-- Right Nav Section -->
     <ul class="right">
       <li class="divider hide-for-small"></li>
-      <li><a href="<?php echo base_url() ?>/backend/logout">Profile</a>
-
-      </li>
+      <li><a href="<?php echo base_url() ?>/backend/profile"><?php echo $this->session->userdata('fname').' '.$this->session->userdata('lname')?></a></li>
 
       <li class="divider hide-for-small"></li>
       <li><a href="<?php echo base_url() ?>/backend/logout">Logout</a>

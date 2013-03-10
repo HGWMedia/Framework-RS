@@ -7,6 +7,7 @@ class Competition {
 	var $error;
 	var $status;
 	var $userdata;
+	var $limit;
 	
 	function __construct()
     {
@@ -19,8 +20,22 @@ class Competition {
 			$this->hgwmedia->db->insert('internship',$data);
 	}
 	
+	public function applicant_details(){
+		//echo  $this->hgwmedia->uri->segment(4);
+		return $this->hgwmedia->db->get_where('internship',array('id' => $this->hgwmedia->uri->segment(4) ));
+	}
 	public function applicants(){
-		return $this->hgwmedia->db->get('internship');
+		$offset = $this->hgwmedia->uri->segment(4);
+		if($offset == NULL){
+			//echo 'Null';
+			$offset = 0;
+		}else{
+			$offset = $offset;
+		}
+		$query = $this->hgwmedia->db->get_where('internship',array(), $this->limit, $offset );
+		//echo $this->hgwmedia->db->last_query();
+		return $query;
+
 	}
 	
 	public function getallrecords(){

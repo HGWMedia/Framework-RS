@@ -3,7 +3,7 @@
 -- Server version:               5.5.25a - MySQL Community Server (GPL)
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4174
--- Date/time:                    2013-03-10 10:49:29
+-- Date/time:                    2013-03-10 17:26:12
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `rsme_internship` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table rs.rsme_internship: ~1 rows (approximately)
+-- Dumping data for table rs.rsme_internship: ~3 rows (approximately)
 /*!40000 ALTER TABLE `rsme_internship` DISABLE KEYS */;
 REPLACE INTO `rsme_internship` (`id`, `fullname`, `address`, `phone`, `email`) VALUES
 	(1, 'Le Angelo', 'JBR', '0504362684', 'adones.fuentes@vz.ae'),
@@ -151,13 +151,52 @@ CREATE TABLE IF NOT EXISTS `rsme_sessions` (
   KEY `last_activity_idx` (`last_activity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table rs.rsme_sessions: ~3 rows (approximately)
+-- Dumping data for table rs.rsme_sessions: ~2 rows (approximately)
 /*!40000 ALTER TABLE `rsme_sessions` DISABLE KEYS */;
 REPLACE INTO `rsme_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-	('064e83deee3450539ddf76197d673dc6', '::1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.152 Safari/537.22', 1362895081, ''),
-	('3db9d529c9287737e6506433dbdcbc66', '::1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0', 1362896772, 'a:6:{s:9:"user_data";s:0:"";s:5:"email";s:16:"don@hgwmedia.com";s:5:"fname";s:3:"Don";s:5:"lname";s:7:"Fuentes";s:7:"isadmin";s:1:"1";s:9:"logged_in";b:1;}'),
-	('d9ddf9bd79ea74967ddd894fb801a3ed', '::1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.152 Safari/537.22', 1362896649, 'a:5:{s:5:"email";s:16:"don@hgwmedia.com";s:5:"fname";s:3:"Don";s:5:"lname";s:7:"Fuentes";s:7:"isadmin";s:1:"1";s:9:"logged_in";b:1;}');
+	('873638c3331aeede7c0642f7d49d4b86', '::1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.152 Safari/537.22', 1362920922, 'a:5:{s:5:"email";s:16:"don@hgwmedia.com";s:5:"fname";s:3:"Don";s:5:"lname";s:7:"Fuentes";s:7:"isadmin";s:1:"1";s:9:"logged_in";b:1;}'),
+	('d2dc04c8572e9ef3a5319c7c81784acb', '::1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0', 1362919392, 'a:6:{s:9:"user_data";s:0:"";s:5:"email";s:16:"don@hgwmedia.com";s:5:"fname";s:3:"Don";s:5:"lname";s:7:"Fuentes";s:7:"isadmin";s:1:"1";s:9:"logged_in";b:1;}');
 /*!40000 ALTER TABLE `rsme_sessions` ENABLE KEYS */;
+
+
+-- Dumping structure for table rs.rsme_tickets_category
+DROP TABLE IF EXISTS `rsme_tickets_category`;
+CREATE TABLE IF NOT EXISTS `rsme_tickets_category` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `category_name` varchar(50) NOT NULL,
+  `description` tinytext,
+  `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table rs.rsme_tickets_category: ~4 rows (approximately)
+/*!40000 ALTER TABLE `rsme_tickets_category` DISABLE KEYS */;
+REPLACE INTO `rsme_tickets_category` (`id`, `category_name`, `description`, `updated`) VALUES
+	(1, 'Sports', NULL, '2013-03-10 13:42:09'),
+	(2, 'Concerts', NULL, '2013-03-10 13:43:35'),
+	(3, 'Theaters', NULL, '2013-03-10 13:43:42'),
+	(4, 'Night Clubs', NULL, '2013-03-10 13:44:00');
+/*!40000 ALTER TABLE `rsme_tickets_category` ENABLE KEYS */;
+
+
+-- Dumping structure for table rs.rsme_tickets_listings
+DROP TABLE IF EXISTS `rsme_tickets_listings`;
+CREATE TABLE IF NOT EXISTS `rsme_tickets_listings` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `cid` int(10) DEFAULT '0',
+  `eid` int(11) DEFAULT '0',
+  `title` varchar(100) NOT NULL,
+  `description` mediumtext,
+  `geomap` varchar(100) DEFAULT '0',
+  `num_tickets` int(11) DEFAULT '0',
+  `amount` decimal(10,2) DEFAULT '0.00',
+  `date_update` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table rs.rsme_tickets_listings: ~0 rows (approximately)
+/*!40000 ALTER TABLE `rsme_tickets_listings` DISABLE KEYS */;
+/*!40000 ALTER TABLE `rsme_tickets_listings` ENABLE KEYS */;
 
 
 -- Dumping structure for table rs.rsme_users

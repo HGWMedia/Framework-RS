@@ -11,6 +11,7 @@ class Backend extends CI_Controller {
 	
 	public function index(){
 		if($this->session->userdata('logged_in') && $this->session->userdata('isadmin')){
+			
 			$this->load->view(Template.DS.'dashboard');	
 		}else{
 			$this->load->view(Template.DS.'index');		
@@ -104,8 +105,9 @@ class Backend extends CI_Controller {
 		}
 		
 	}
+	
+	
 	public function tickets(){
-		$this->load->library('tickets');
 		
 		if($this->session->userdata('logged_in') && $this->session->userdata('isadmin')){
 			$page = $this->uri->segment(3);
@@ -146,6 +148,10 @@ class Backend extends CI_Controller {
 			$this->load->view(Template.DS.$this->uri->segment(2).DS.$this->uri->segment(3));	
 		}
 		//exit;
+	}
+	
+	public function formpost(){
+	
 	}
 
 }

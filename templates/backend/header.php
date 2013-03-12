@@ -30,3 +30,9 @@
 	<?php echo $this->template->get_template_part('modules/tickets/ticket_form_item') ?>
     <?php echo $this->template->get_template_part('modules/tickets/ticket_form_category') ?>    
 <?php endif; ?>
+
+<div class="row">
+
+<!-- <h1>Rolling Stone ME Dashboard</h1> -->
+
+</div>

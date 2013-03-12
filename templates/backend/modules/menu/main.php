@@ -62,19 +62,20 @@
               <li><a href="<?php echo base_url().Template.DS?>tickets/category/additem"  data-reveal-id="cateitemfrm" >Add Category Item</a></li>
             </ul>
           </li>
-          <li class="has-dropdown"><a href="#">Events</a>
+          <li class="has-dropdown"><a href="<?php echo base_url().Template.DS?>tickets/events/">Events</a>
             <ul class="dropdown">
-              <li><a href="#">Add New</a></li>
-              <li><a href="#">View All</a></li>
+              <li><a href="<?php echo base_url().Template.DS?>tickets/events/additem">Add New</a></li>
+              <!-- <li><a href="#">View All</a></li> -->
             </ul>
           </li>
+         <!--
           <li class="has-dropdown"><a href="#">Tickets</a>
             <ul class="dropdown">
               <li><a href="#">Add New</a></li>
               <li><a href="#">View All</a></li>
             </ul>
           </li>
-
+		-->
           </li>
         </ul>
       </li>

@@ -9,6 +9,7 @@
   
   <script src="<?php echo base_url() ?>templates/<?php echo Template ?>/js/foundation.min.js"></script>
   <script src="<?php echo base_url() ?>templates/<?php echo Template ?>/js/foundation/foundation.reveal.js"></script>
+  <script src="<?php echo base_url() ?>templates/<?php echo Template ?>/js/foundation/foundation.forms.js"></script>
   <script>
 	  $(document).foundation();
   </script>

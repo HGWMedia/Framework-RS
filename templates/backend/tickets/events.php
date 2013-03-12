@@ -5,10 +5,10 @@
 <?php echo $this->template->get_template_part('modules/menu/main') ?>
 </div>
 <div class="row">
-	<h3>RS Tickets Category (Category Name Here)</h3>
+	<h3>Events</h3>
     
     <?php //echo $this->pagination->create_links(); ?>
-    <a href="#" class="small button"  data-reveal-id="cateitemfrm">Add Category Item</a>
+    <a href="#" class="small button"  data-reveal-id="eventitemfrm">Add Event</a>
 	<table width="100%">
     	<thead>
             <tr><td>Id</td><td colspan="2">Name</td></tr>

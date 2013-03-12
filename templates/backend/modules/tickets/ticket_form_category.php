@@ -7,7 +7,7 @@
     </div>
 <form id="catfrmval" action="rs/register" method="post">
 
-	<input type="hidden" name="type" value="rs" />
+	<input type="hidden" name="type" value="category" />
 	<div class="row">
         <div class="small-3 columns">
           <label for="right-label" class="right inline">Category Name</label>

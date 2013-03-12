@@ -5,9 +5,10 @@
 	<div class="status">
     	
     </div>
-<form id="cateitemfrmval" action="rs/register" method="post">
+<form id="cateitemfrmval" action="<?php echo base_url()?>backend/formpost" method="post" class="custom">
 
-	<input type="hidden" name="type" value="rs" />
+	<input type="hidden" name="type" value="category-item" />
+    <input type="hidden" name="action" value="save" />
 	<div class="row">
         <div class="small-3 columns">
           <label for="right-label" class="right inline">Title</label>
@@ -21,7 +22,13 @@
           <label for="right-label" class="right inline">Category</label>
         </div>
         <div class="small-9 columns">
-          <input type="text" name="category" id="category" placeholder="Category">
+          <select id="customDropdown" name="category">
+          <?php 
+            $query = $this->tickets->categories();
+				foreach($query->result() as $row): ?>
+            	<option value="<?php echo $row->id?>"><?php echo $row->category_name?></option>
+            <?php endforeach ?>
+          </select>
         </div>
     </div>
 	<div class="row">
@@ -34,18 +41,26 @@
     </div>
 	<div class="row">
         <div class="small-3 columns">
-          <label for="right-label" class="right inline">Geo Map</label>
+          <label for="right-label" class="right inline">Location</label>
         </div>
         <div class="small-9 columns">
-          <input type="text" name="description" id="description" placeholder="Geo Map Coordinate">
+          <input type="text" name="description" id="description" placeholder="Location">
         </div>
     </div>
 	<div class="row">
         <div class="small-3 columns">
-          <label for="right-label" class="right inline">Has Ticket</label>
+          <label for="right-label" class="right inline">No. Ticket</label>
         </div>
         <div class="small-9 columns">
-          <input type="text" name="description" id="description" placeholder="Description">
+          <input type="text" name="number" id="number" placeholder="Tickets Available">
+        </div>
+    </div>
+	<div class="row">
+        <div class="small-3 columns">
+          <label for="right-label" class="right inline">Ticket Amount</label>
+        </div>
+        <div class="small-9 columns">
+          <input type="text" name="amount" id="amount" placeholder="Amount">
         </div>
     </div>
       
@@ -71,7 +86,7 @@
 		  
 var v = jQuery("#cateitemfrmval").validate({
 		rules :{
-			//fname:{required:true},
+			title:{required:true},
 			//lname:{required:true},
 			//phone:{required:true},
 			//email:{required:true,email:true},
@@ -87,8 +102,8 @@ var v = jQuery("#cateitemfrmval").validate({
 	   }
 	   ,submitHandler :function()
 	   {
-		   el = "#regformval";
-		   $.ajax({url:$(el).attr('cateitemfrmval'),type:"POST",data:$(el).serialize(),
+		   el = "#cateitemfrmval";
+		   $.ajax({url:$(el).attr('action'),type:"POST",data:$(el).serialize(),
 					success:function(response){
 						$('.status').html(response);
 							//responce=jQuery.parseJSON(responce);
